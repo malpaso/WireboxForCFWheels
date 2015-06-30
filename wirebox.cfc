@@ -24,8 +24,8 @@
 		Set Config Path
 		checks config/<envirnonment>/<configFileName> then config/<configFileName>
 		 --->
-		<cfif FileExists(expandPath("/config/#APPLICATION.WHEELS.ENVIRONMENT#/#WBconfigFile#.cfc"))>
-			<cfset configClassPath = "config.#APPLICATION.WHEELS.ENVIRONMENT#.#WBconfigFile#" />
+		<cfif FileExists(expandPath("/config/#APPLICATION.$WHEELS.ENVIRONMENT#/#WBconfigFile#.cfc"))>
+			<cfset configClassPath = "config.#APPLICATION.$WHEELS.ENVIRONMENT#.#WBconfigFile#" />
 		<cfelseif FileExists(expandPath("/config/#WBconfigFile#.cfc"))>
 			<cfset configClassPath = "config.#WBconfigFile#" />
 		<cfelse><!--- didn't find our config file anywhere; give the user a blank copy in their config folder --->
